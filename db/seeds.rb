@@ -20,7 +20,7 @@ Pin.create(
   resource_type: "ruby")
 Pin.create(
   title: 'Ruby Quiz', 
-  url: 'http://rubyquiz.org', 
+  url: 'http://rubyquiz.com', 
   text: "A collection of quizzes on the Ruby programming language.", 
   slug: "ruby-quiz",
   resource_type: "ruby")
