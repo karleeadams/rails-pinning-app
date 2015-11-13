@@ -1,6 +1,9 @@
 a {
   color: #dd5566;
 }
+body {
+  background: url(asset-path('laptop-background.jpg')) no-repeat;
+}
 h1 {
   font-family: 'Lobster', cursive;
   font-size: 60px;
