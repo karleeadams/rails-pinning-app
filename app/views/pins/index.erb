@@ -21,12 +21,12 @@
 
               <div class="col-xs-9">
                 <h4>
-                  <a href="<%= pin_path(pin) %>">
+                  <a href="<%= pin_by_name_path(slug: pin.slug) %>">
                     <%= "#{pin.title}" %>
                   </a>
                 </h4>
-                <a class="url" href="<%= "#{pin.url}" %>">
-                  <%= "#{pin.url}" %>
+                <a class="url" href="<%= "#{pin.url}" %>" target="_blank">
+                  <%= "#{pin.url.truncate(30)}" %>
                 </a>
               </div>
 
