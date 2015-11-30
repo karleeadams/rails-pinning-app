@@ -4,7 +4,9 @@
     <%= "#{@pin.title}" %>
   </h1>
 </div>
-
+<div class="photo">
+  <img src="<%= @pin.image.url(:medium) %>">
+</div>
 <div class="show-pin">
   <p><%= "#{@pin.text}" %></p>
 
@@ -15,9 +17,7 @@
   </p>
 </div>
 
-<div class="photo">
-  <img src="<%= @pin.image.url(:medium) %>">
-</div>
+
 
 <br/>
 <a href="/">

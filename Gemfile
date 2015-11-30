@@ -55,3 +55,5 @@ end
 #for file uploads from the website
 gem 'paperclip'
 
+gem 'aws-sdk', '<2.0'
+

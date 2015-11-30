@@ -331,3 +331,783 @@ ActionView::Template::Error (undefined method `image' for nil:NilClass):
   Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (15.2ms)
   Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
   Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (499.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 09:14:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (12.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (2.0ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (60.4ms)
+Completed 500 Internal Server Error in 117ms
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    31:               </div>
+    32:               
+    33:               <div class="photo">
+    34:                 <img src="<%= @pin.image.url(:medium) %>">
+    35:               </div>
+    36: 
+    37:             </div>
+  app/views/pins/index.erb:34:in `block (2 levels) in _app_views_pins_index_erb___1588973284590224823_70200823410520'
+  app/views/pins/index.erb:9:in `each'
+  app/views/pins/index.erb:9:in `block in _app_views_pins_index_erb___1588973284590224823_70200823410520'
+  app/views/pins/index.erb:7:in `_app_views_pins_index_erb___1588973284590224823_70200823410520'
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.0ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (163.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (119.9ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (276.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (13.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (7.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pins'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-11-30 11:45:25 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (4.5ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (45.3ms)
+Completed 500 Internal Server Error in 130ms
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    31:               </div>
+    32:               
+    33:               <div class="photo">
+    34:                 <img src="<%= @pin.image.url(:medium) %>">
+    35:               </div>
+    36: 
+    37:             </div>
+  app/views/pins/index.erb:34:in `block (2 levels) in _app_views_pins_index_erb___4033919750212147980_70185108617880'
+  app/views/pins/index.erb:9:in `each'
+  app/views/pins/index.erb:9:in `block in _app_views_pins_index_erb___4033919750212147980_70185108617880'
+  app/views/pins/index.erb:7:in `_app_views_pins_index_erb___4033919750212147980_70185108617880'
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (30.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (235.9ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (128.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (289.2ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 11:45:39 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.6ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    31:               </div>
+    32:               
+    33:               <div class="photo">
+    34:                 <img src="<%= @pin.image.url(:medium) %>">
+    35:               </div>
+    36: 
+    37:             </div>
+  app/views/pins/index.erb:34:in `block (2 levels) in _app_views_pins_index_erb___4033919750212147980_70185108617880'
+  app/views/pins/index.erb:9:in `each'
+  app/views/pins/index.erb:9:in `block in _app_views_pins_index_erb___4033919750212147980_70185108617880'
+  app/views/pins/index.erb:7:in `_app_views_pins_index_erb___4033919750212147980_70185108617880'
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.2ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (108.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (242.3ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 11:46:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (1.2ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (28.4ms)
+Completed 500 Internal Server Error in 72ms
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    31:               </div>
+    32:               
+    33:               <div class="photo">
+    34:                 <img src="<%= @pin.image.url(:medium) %>">
+    35:               </div>
+    36: 
+    37:             </div>
+  app/views/pins/index.erb:34:in `block (2 levels) in _app_views_pins_index_erb__3407848416862255786_70234261838840'
+  app/views/pins/index.erb:9:in `each'
+  app/views/pins/index.erb:9:in `block in _app_views_pins_index_erb__3407848416862255786_70234261838840'
+  app/views/pins/index.erb:7:in `_app_views_pins_index_erb__3407848416862255786_70234261838840'
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.1ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (147.8ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (120.2ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (263.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 11:46:53 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (5.0ms)
+Completed 200 OK in 155ms (Views: 154.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application-f46bfd7c86977660d26a5dc536d3fb99.css?body=1" for ::1 at 2015-11-30 11:46:53 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 11:46:53 -0700
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for ::1 at 2015-11-30 11:46:53 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 11:46:54 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 11:46:54 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 11:46:54 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 11:46:54 -0700
+
+
+Started GET "/assets/laptop-background-280277fdcad4c5b6066d8c2814432e86.jpg" for ::1 at 2015-11-30 11:46:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (6.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151130191506)
+  [1m[35m (11.3ms)[0m  BEGIN
+  [1m[36m (65.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (24.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151130191506"]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (8.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (6.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pins'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/users/new" for ::1 at 2015-11-30 12:16:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (47.5ms)
+  Rendered users/new.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 743ms (Views: 696.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:16:08 -0700
+
+
+Started GET "/users" for ::1 at 2015-11-30 12:25:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 210ms (Views: 184.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 12:25:49 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 12:25:49 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 12:25:49 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:25:49 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:25:49 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 12:42:43 -0700
+Processing by PinsController#index as HTML
+  Rendered pins/index.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 47ms
+
+SyntaxError (/Users/jordanadams/Sites/ruby/rails/rails-pinning-app/app/views/pins/index.erb:9: formal argument cannot be an instance variable
+'.freeze;       row.each do |@pin|       
+                                 ^):
+  app/views/pins/index.erb:9: formal argument cannot be an instance variable
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (58.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (227.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (124.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (289.2ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 12:43:08 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (13.2ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (54.7ms)
+Completed 200 OK in 190ms (Views: 152.4ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/assets/laptop-background-280277fdcad4c5b6066d8c2814432e86.jpg" for ::1 at 2015-11-30 12:43:09 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 12:43:42 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.8ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (8.5ms)
+Completed 200 OK in 115ms (Views: 112.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 12:43:43 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 12:44:16 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (7.4ms)
+Completed 200 OK in 108ms (Views: 106.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 12:44:17 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 13:05:41 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (1.2ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (31.2ms)
+Completed 200 OK in 312ms (Views: 301.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/laptop-background-280277fdcad4c5b6066d8c2814432e86.jpg" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 13:05:42 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (2.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (7.0ms)
+Completed 200 OK in 114ms (Views: 110.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:05:42 -0700
+
+
+Started GET "/pins/name-rails-tutorial" for ::1 at 2015-11-30 13:26:03 -0700
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"rails-tutorial"}
+  [1m[35mPin Load (7.0ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "rails-tutorial"]]
+  Rendered pins/show.erb within layouts/application (5.2ms)
+Completed 200 OK in 383ms (Views: 176.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:26:04 -0700
+
+
+Started GET "/pins/name-rails-tutorial" for ::1 at 2015-11-30 13:28:11 -0700
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"rails-tutorial"}
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "rails-tutorial"]]
+  Rendered pins/show.erb within layouts/application (54.2ms)
+Completed 500 Internal Server Error in 73ms
+
+ActionView::Template::Error (undefined local variable or method `pin' for #<#<Class:0x007fd3de0c3140>:0x007fd3de2d0140>):
+    16: </div>
+    17: 
+    18: <div class="photo">
+    19:   <img src="<%= pin.image.url(:medium) %>">
+    20: </div>
+    21: 
+    22: <br/>
+  app/views/pins/show.erb:19:in `_app_views_pins_show_erb__3172306797064039184_70273971114260'
+  app/controllers/pins_controller.rb:8:in `show_by_name'
+
+
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (36.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (165.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (107.1ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jordanadams/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (234.8ms)
+
+
+Started GET "/pins/name-rails-tutorial" for ::1 at 2015-11-30 13:28:31 -0700
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"rails-tutorial"}
+  [1m[35mPin Load (1.2ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "rails-tutorial"]]
+  Rendered pins/show.erb within layouts/application (1.5ms)
+Completed 200 OK in 116ms (Views: 113.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:28:31 -0700
+
+
+Started GET "/pins/name-rails-tutorial" for ::1 at 2015-11-30 13:28:56 -0700
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"rails-tutorial"}
+  [1m[36mPin Load (0.9ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "rails-tutorial"]]
+  Rendered pins/show.erb within layouts/application (1.9ms)
+Completed 200 OK in 99ms (Views: 96.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:28:56 -0700
+
+
+Started GET "/" for ::1 at 2015-11-30 13:40:48 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (1.4ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mCategory Load (8.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pins/index.erb within layouts/application (169.0ms)
+Completed 200 OK in 308ms (Views: 270.4ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/rails-logo-thumbnail-9ac79afb30c2690c12998924141687c9.png" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/assets/ruby-logo-thumbnail-f7feb40a78b146b9f172f8d866e29de8.png" for ::1 at 2015-11-30 13:40:49 -0700
+
+
+Started GET "/pins/new" for ::1 at 2015-11-30 13:42:56 -0700
+Processing by PinsController#new as HTML
+  [1m[36mCategory Load (1.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered pins/_form.erb (139.9ms)
+  Rendered pins/new.erb within layouts/application (158.2ms)
+Completed 200 OK in 358ms (Views: 331.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:42:56 -0700
+
+
+Started GET "/pins/new" for ::1 at 2015-11-30 13:59:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#new as HTML
+  [1m[35mCategory Load (1.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered pins/_form.erb (57.5ms)
+  Rendered pins/new.erb within layouts/application (69.6ms)
+Completed 200 OK in 303ms (Views: 242.8ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/scaffolds-9d6d29fe3672742c586322357962cad5.css?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/pins-6910167b185abe94b710d1325c01f1f6.css?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/cosmo-bootswatch-theme-450effffe2a267bc84c90be0448c1ea9.css?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/application-eaa71f4136ee8354984df84bbeb3f8ae.css?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-11-30 13:59:16 -0700
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for ::1 at 2015-11-30 13:59:16 -0700

@@ -12,10 +12,12 @@
             <div class="pin-header row">
 
               <div class="logo-thumbnail col-xs-3">
-                <% if "#{pin.category_id}" == "rails" %>
+                <% if pin.image_file_name.nil? == false %>
+                  <img src="<%= pin.image.url(:thumb) %>" >
+                <% elsif "#{pin.category.name}" == "rails" %>
                   <%= image_tag('rails-logo-thumbnail.png') %>
-                <% elsif "#{pin.category_id}" == "ruby" %>
-                  <%= image_tag('ruby-logo-thumbnail.png') %>        
+                <% elsif "#{pin.category.name}" == "ruby" %>
+                  <%= image_tag('ruby-logo-thumbnail.png') %>    
                   <% end %>
               </div>
 
@@ -29,13 +31,9 @@
                   <%= "#{pin.url.truncate(30)}" %>
                 </a>
               </div>
-              
-              <div class="photo">
-                <img src="<%= @pin.image.url(:medium) %>">
-              </div>
-
             </div>
             <hr/>
+
             <p class="text"><%= "#{pin.text}" %></p>
           </div>
         </div>
