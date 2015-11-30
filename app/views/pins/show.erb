@@ -14,6 +14,11 @@
     <a><%= link_to "#{@pin.url}", @pin.url, html_options = {target: "_blank", class: "url"} %></a>
   </p>
 </div>
+
+<div class="photo">
+  <img src="<%= @pin.image.url(:medium) %>">
+</div>
+
 <br/>
 <a href="/">
   <i class="fa fa-chevron-left"></i>

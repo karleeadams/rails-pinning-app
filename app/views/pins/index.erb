@@ -29,6 +29,10 @@
                   <%= "#{pin.url.truncate(30)}" %>
                 </a>
               </div>
+              
+              <div class="photo">
+                <img src="<%= @pin.image.url(:medium) %>">
+              </div>
 
             </div>
             <hr/>

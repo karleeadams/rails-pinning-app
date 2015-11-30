@@ -9,7 +9,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.find(params[:id])
+    @pin = Pin.find_by_id(params[:id])
   end
   
   def new
@@ -27,10 +27,19 @@ class PinsController < ApplicationController
   	end
   end
 
+  def edit
+  	@pin = Pin.find_by_id(params[:id])
+  end
+
+  def update
+  	@pin = Pin.create(pin_params)
+  	redirect :show
+  end
+
   private
 
   def pin_params
-  	params.require(:pin).permit(:title, :url, :slug, :text, :category_id)
+  	params.require(:pin).permit(:title, :url, :slug, :text, :category_id, :image)
   end
 
 end

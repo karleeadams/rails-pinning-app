@@ -44,6 +44,14 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+#rspec for testing
 gem 'rspec'
 gem 'rspec-rails'
-gem 'rails_12factor'
+
+group :production do
+  gem 'rails_12factor'
+end
+
+#for file uploads from the website
+gem 'paperclip'
+
