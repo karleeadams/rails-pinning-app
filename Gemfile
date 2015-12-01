@@ -32,7 +32,7 @@ gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -41,12 +41,18 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~>1.3.4'
-  gem 'database_cleaner'
 end
 
-#rspec for testing
-gem 'rspec'
-gem 'rspec-rails'
+group :test do
+	#rspec for testing
+	gem 'shoulda-matchers'
+	gem 'spring', '~>1.3.4'
+	gem 'database_cleaner'
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+
+end
 
 group :production do
   gem 'rails_12factor'
@@ -56,4 +62,6 @@ end
 gem 'paperclip'
 
 gem 'aws-sdk', '<2.0'
+
+gem 'bcrypt', '~> 3.1.7'
 

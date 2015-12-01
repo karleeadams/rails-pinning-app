@@ -1,0 +1,48 @@
+  [1m[36m (10.0ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (12.9ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (11.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (34.3ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (30.1ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36m (12.7ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (34.2ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (8.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (39.8ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.5ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (26.3ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.4ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (20.7ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "pins" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.3ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE tablename !~ '_prt_' AND schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'coder-pinterest_test'[0m
+  [1m[35m (8.4ms)[0m  TRUNCATE TABLE "public"."pins", "public"."schema_migrations" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "pins" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m

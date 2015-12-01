@@ -31,7 +31,7 @@ class CreateCategories < ActiveRecord::Migration
       puts "MIGRATION SUCCESSFUL!"
       puts "All your data has been migrated successfully."      
     else
-      puts "ERROR! Something went wrong - not all pins have been assigned a category Id."
+      puts "ERROR! Something went wrong - not all pins have been assigned a category id."
     end
   end
 end

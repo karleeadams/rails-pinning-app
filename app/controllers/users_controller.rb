@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @pins = current_user.pins
   end
 
   # GET /users/new
@@ -58,6 +59,20 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def login
+  end
+
+  def authenticate
+    @user = User.authenticate(params[:email], params[:password])
+    if !@user.nil?
+      session[:user_id] = @user.id
+      redirect_to user_path id: @user.id
+    else
+      @error = "Your Username and/or Password is incorrect!"
+      render :login
     end
   end
 
