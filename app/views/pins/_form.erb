@@ -1,4 +1,5 @@
 <%= form_for @pin do |f| %>
+	<%= f.hidden_field :user, value: current_user.id %>
 
 	<div class="row">
 		<label for="pin_title">Title:</label>
@@ -29,7 +30,7 @@
   		<label for="pin_image">Image</label>
   		<%= f.file_field :image  %>
 	</div>
-	
+
 	<div>
 	<%= f.button(options = {class: "btn btn-default"}) %>
  	</div>

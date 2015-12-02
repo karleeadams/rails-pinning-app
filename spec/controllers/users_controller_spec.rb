@@ -24,7 +24,7 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   before(:each) do
-    @user = FactoryGirl.build(user)
+    @user = FactoryGirl.build(:user)
   end
   after(:each) do
     if !@user.destroyed?
@@ -51,6 +51,28 @@ RSpec.describe UsersController, type: :controller do
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  describe "GET #show" do
+    it "redirects to login if user is not signed in" do
+      user = User.create! valid_attributes
+      get :show, {:id => user.to_param}, valid_session
+      expect(response).to redirect_to(:login)
+  end
+
+  it "assigns the requested user as @user" do
+    user = User.create! valid_attributes
+    post :authenticate, {email: @user.email, password: @user.password}
+    get :show, {:id => user.to_param}, valid_session
+    expect(assigns(:user)).to eq(user)
+  end
+end
+
+describe "GET #new" do
+  it "assigns a new user as @user" do
+    get :new, {}, valid_session
+    expect(assigns(:user)).to be_a_new(User)
+  end
+end
+
   describe "GET #index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
@@ -62,6 +84,7 @@ RSpec.describe UsersController, type: :controller do
   describe "GET #show" do
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
+      post :authenticate, {email: @user.email, password: @user.password}
       get :show, {:id => user.to_param}, valid_session
       expect(assigns(:user)).to eq(user)
     end

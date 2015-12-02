@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Coder Pinterest</title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container">
-    <%= yield %>
-  </div>
-</body>
+
+	<head>
+	  <title>Coder Pinterest</title>
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+  		<div class="container">
+  		<% if !current_user.nil? %>
+  			<div class="user pull-right">
+  				<h3>
+      				<%= "Hi, #{current_user.first_name}!"%> |
+      				<%= link_to "Logout", logout_path(current_user), method: :delete %>
+    			</h3>
+  			</div>
+  		<% end %>
+  		
+    		<%= yield %>
+ 		 </div>
+	</body>
+
 </html>
