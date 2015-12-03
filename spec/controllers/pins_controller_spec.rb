@@ -1,5 +1,15 @@
 require 'spec_helper'
 RSpec.describe PinsController do
+  before(:each) do
+    @user = FactoryGirl.create(:user)
+    login(@user)
+  end
+
+  after(:each) do
+    if !@user.destroyed?
+      @user.destroy
+    end
+  end
 
 	describe "GET index" do
 

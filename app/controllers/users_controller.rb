@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:show, :edit, :update, :destroy, :index]
 
   # GET /users
   # GET /users.json
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @pins = current_user.pins
+    
   end
 
   # GET /users/new
@@ -68,11 +68,11 @@ class UsersController < ApplicationController
   def authenticate
     @user = User.authenticate(params[:email], params[:password])
     if @user.nil?
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
-    else
       @errors = "Your Email and/or Password is incorrect!"
       render :login
+    else
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     end
   end
 
