@@ -35,6 +35,12 @@
             <hr/>
 
             <p class="text"><%= "#{pin.text}" %></p>
+            
+            <%= link_to repin_path(pin), class: "btn btn-secondary", method: "post" do %>
+            <i class="fa fa-thumb-tack"></i>
+            Repin!
+          <% end %>
+            
           </div>
         </div>
       <% end %>

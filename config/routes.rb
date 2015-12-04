@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post 'login' => "users#authenticate"
 
+  post "pins/repin/:id" => "pins#repin", as: 'repin'
+
   delete 'logout/:id' => "users#logout", as: :logout
 
   # The priority is based upon order of creation: first created -> highest priority.
