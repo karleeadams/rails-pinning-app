@@ -11,22 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204004159) do
+ActiveRecord::Schema.define(version: 20151206164320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "board_pinners", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "board_pinners", ["board_id"], name: "index_board_pinners_on_board_id", using: :btree
+  add_index "board_pinners", ["user_id"], name: "index_board_pinners_on_user_id", using: :btree
+
+  create_table "boards", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "boards", ["user_id"], name: "index_boards_on_user_id", using: :btree
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
   end
+
+  create_table "followers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "follower_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "followers", ["follower_id"], name: "index_followers_on_follower_id", using: :btree
+  add_index "followers", ["user_id"], name: "index_followers_on_user_id", using: :btree
 
   create_table "pinnings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "pin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "board_id"
   end
 
+  add_index "pinnings", ["board_id"], name: "index_pinnings_on_board_id", using: :btree
   add_index "pinnings", ["pin_id"], name: "index_pinnings_on_pin_id", using: :btree
   add_index "pinnings", ["user_id"], name: "index_pinnings_on_user_id", using: :btree
 
@@ -55,6 +86,11 @@ ActiveRecord::Schema.define(version: 20151204004159) do
     t.string   "password_digest"
   end
 
+  add_foreign_key "board_pinners", "boards"
+  add_foreign_key "board_pinners", "users"
+  add_foreign_key "boards", "users"
+  add_foreign_key "followers", "users"
+  add_foreign_key "followers", "users", column: "follower_id"
   add_foreign_key "pinnings", "pins"
   add_foreign_key "pinnings", "users"
   add_foreign_key "pins", "users"

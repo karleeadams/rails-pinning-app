@@ -1,0 +1,16 @@
+<% if logged_in? %>
+	<%= form_for @pin, action: repin_path(@pin), method: "post" do |f| %>
+		<%= f.fields_for :pinning do |p| %>
+			<div class="form-group">
+				<label>Board:</label>
+					<%= p.collection_select(:board_id, current_user.pinnable_boards, :id, :name, {}, {class: "form-control"}) %>
+			</div>
+				<%= p.hidden_field :user_id, value: current_user.id %>
+		<% end %>
+		<%= f.button :submit, class: "btn btn-secondary pinterest-theme-button" do %>
+				<i class="fa fa-thumb-tack"></i>
+		<% end %>
+	<% end %>
+<% else %>
+	<%= link_to "Log in to repin!", login_path %>
+<% end %>

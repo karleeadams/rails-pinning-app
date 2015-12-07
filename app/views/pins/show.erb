@@ -24,7 +24,9 @@
     <b>Visit <%= "#{@pin.title}" %> at: </b>
     <a><%= link_to "#{@pin.url}", @pin.url, html_options = {target: "_blank", class: "url"} %></a>
   </p>
-  
+  <div class="repin">
+    <%= render partial: "shared/repin_form", locals: {pin: @pin} %>
+  </div>
 
 </div>
 

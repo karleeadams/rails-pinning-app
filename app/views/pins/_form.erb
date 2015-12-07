@@ -1,38 +1,63 @@
-<%= form_for @pin do |f| %>
-	<%= f.hidden_field :user, value: current_user.id %>
+<div class="row">
+	<%= form_for @pin do |f| %>
+		<%= f.hidden_field :user, value: current_user.id %>
 
-	<div class="row">
-		<label for="pin_title">Title:</label>
-		<%= f.text_field :title %>
-	</div>
+		<div class="form-group">
+			<label for="pin_title" class="col-sm-2 control-label">Title:</label>
+			<%= f.text_field :title %>
+		</div>
 
-	<div class="row">
-		<label for="pin_url">Website:</label>
-		<%= f.text_field :url %>
-	</div>
+		<div class="form-group">
+			<label for="pin_url" class="col-sm-2 control-label">Website:</label>
+			<div class="col-sm-10">
+				<%= f.text_field :url %>
+			</div>
+		</div>
 
-	<div class="row">
-		<label for="pin_slug">Slug:</label>
-		<%= f.text_field :slug %>
-	</div>
+		<div class="form-group">
+			<label for="pin_slug" class="col-sm-2 control-label">Slug:</label>
+			<div class="col-sm-10">
+				<%= f.text_field :slug %>
+			</div>
+		</div>
 
-	<div class="row">
-		<label for="pin_text">Text:</label>
-		<%= f.text_field :text %>
-	</div>
+		<div class="form-group">
+			<%= f.fields_for :pinning do |p| %>
+				<label for="pin_board_id" class="col-sm-2 control-label">Board:</label>
+					<div class="col-sm-10">
+					<%= p.collection_select(:board_id, current_user.boards, :id, :name, {}, {class: "form-control"}) %>
+					<%= p.hidden_field :user_id, value: current_user.id %>
+				<% end %>
+			</div>
+		</div>
 
-	<div class="row">
-		<label for="pin_category_id">Category:</label>
-		<%= f.collection_select(:category_id, Category.all, :id, :name) %>
-	</div>
+		<div class="form-group">
+			<label for="pin_text" class="col-sm-2 control-label">Text:</label>
+			<div class="col-sm-10">
+				<%= f.text_field :text %>
+			</div>
+		</div>
 
-	<div class="form-group">
-  		<label for="pin_image">Image</label>
-  		<%= f.file_field :image  %>
-	</div>
+		<div class="form-group">
+			<label for="pin_category_id" class="col-sm-2 control-label">Category:</label>
+			<div class="col-sm-10">
+				<%= f.collection_select(:category_id, Category.all, :id, :name) %>
+			</div>
+		</div>
 
-	<div>
-	<%= f.button(options = {class: "btn btn-default"}) %>
- 	</div>
+		<div class="form-group">
+	  		<label for="pin_image" class="col-sm-2 control-label">Image</label>
+	  		<div class="col-sm-10">
+	  			<%= f.file_field :image  %>
+	  		</div>
+		</div>
 
-<% end %>
+		<div class="form-group">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<%= f.button(options = {class: "btn btn-default"}) %>
+			</div>
+	 	</div>
+
+	<% end %>
+</div>
